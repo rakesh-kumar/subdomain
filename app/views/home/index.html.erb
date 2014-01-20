@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <!-- <th>Subdomain</th> -->
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @blogs.each do |blog| %>
+  <tr>
+    <td><%=link_to blog.name,root_url(:subdomain =>blog.subdomain) %></td>
+    <td><%#= blog.subdomain %></td>
+    <td><%= link_to 'Show', blog %></td>
+    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+    <td><%#= link_to 'Destroy', blog, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
